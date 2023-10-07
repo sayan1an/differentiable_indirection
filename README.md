@@ -52,4 +52,10 @@ class DifferentiableIndirection(torch.nn.Module):
 
 Download the training data and place it in the directory structure as outlined above in folder `DifferentiableIndirectionData`. The training and inference output is accumulated in the folder `DifferentiableIndirectionOutput`.
 
+<b>Training <i>Disney BRDF</i> using cascaded-decoders of size 16.</b>
+```
+cd DifferentiableIndirection/disneyFit
+../disneyFit>python .\train.py 16 16 16
+```
+
 
