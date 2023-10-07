@@ -19,6 +19,10 @@
 
 # Important files
 
+* `DifferentiableIndirection/networksBase.py` -- Defines differentiable arrays `SpatialGrid2D, SpatialGrid3D, and SpatialGrid4D`.
+* `DifferentiableIndirection/disneyFit/networks.py` -- Defines <i>Disney BRDF</i> approximation network.
+* `DifferentiableIndirection/textureCompression/networks.py` -- Defines texture compression networks with varying `2D, 3D, 4D` cascaded arrays.
+
 # A simple <i>differentiable indirection</i> example
 
 # Training and inference
