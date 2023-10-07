@@ -50,5 +50,6 @@ class DifferentiableIndirection(torch.nn.Module):
 
 # Training and inference
 
+Download the training data and place it in the directory structure as outlined above in folder `DifferentiableIndirectionData`. The training and inference output is accumulated in the folder `DifferentiableIndirectionOutput`.
 
 
