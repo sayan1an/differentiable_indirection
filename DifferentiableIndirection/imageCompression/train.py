@@ -9,20 +9,18 @@ import os
 import imageTools as it
 import time
 
-# traincmd: python ./train.py 48 "Network_p2_c4_401"
+# traincmd: python ./train.py 48 "Network_p2_c4_401" "6_0"
 
 className = ut.getSysArgv(2)
+imageFolder = ut.getSysArgv(3)
 experimentName = className
 compressionRatio = int(ut.getSysArgv(1))
 
 baseDataDirectory = ut.getBaseDirectory()
 experimentName += "_CR" + str(compressionRatio)
 
-if ut.isCluster():
-    experimentName += "_Cluster"
-
-textureDirectory = baseDataDirectory + "DifferentiableIndirectionData/imageCache/6_0/"
-outputDirectory = baseDataDirectory + "DifferentiableIndirectionOutput/6_0/" + experimentName + "/" #
+textureDirectory = baseDataDirectory + "DifferentiableIndirectionData/imageCache/" + imageFolder
+outputDirectory = baseDataDirectory + "DifferentiableIndirectionOutput/" + imageFolder + "/" + experimentName + "/" #
 
 if not os.path.exists(outputDirectory):
     os.makedirs(outputDirectory)

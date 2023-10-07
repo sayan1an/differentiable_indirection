@@ -8,6 +8,8 @@ import torch
 from shade import render
 import imageTools as it
 
+# cmd: python .\eval.py 16 16 16
+
 baseName = "disneyFitTrain"
 tab0Res = int(ut.getSysArgv(1))
 tab1Res = int(ut.getSysArgv(2)) 
