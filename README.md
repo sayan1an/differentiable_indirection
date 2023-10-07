@@ -29,7 +29,7 @@
 import networksBase as nb
 import torch
 
-class DifferentiableIndirection(nn.Module):
+class DifferentiableIndirection(torch.nn.Module):
     def __init__(self, primarySize, cascadedSize, torchDevice):
         super(DifferentiableIndirection, self).__init__()
 
