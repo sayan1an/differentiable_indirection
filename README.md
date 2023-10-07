@@ -10,7 +10,7 @@
 ```text
 ├── DifferentiableIndirection
 │   └── disneyFit
-│   └── textureCompression
+│   └── imageCompression
 ├── DifferentiableIndirectionData
 │   └── gBuffer
 │   └── textureCache
@@ -21,7 +21,7 @@
 
 * `DifferentiableIndirection/networksBase.py` -- Defines differentiable arrays `SpatialGrid2D, SpatialGrid3D, and SpatialGrid4D`.
 * `DifferentiableIndirection/disneyFit/networks.py` -- Defines <i>Disney BRDF</i> approximation network.
-* `DifferentiableIndirection/textureCompression/networks.py` -- Defines texture compression networks with varying `2D, 3D, 4D` cascaded arrays.
+* `DifferentiableIndirection/imageCompression/networks.py` -- Defines image compression networks with varying `2D, 3D, 4D` cascaded arrays.
 
 # A simple <i>differentiable indirection</i> example
 
@@ -70,9 +70,9 @@ cd DifferentiableIndirection/disneyFit
 ../disneyFit>python .\eval.py 16 16 16
 ```
 
-<b>Training a 6x or 24x compressed texture representation using `2D, 3D, and 4D` cascaded-arrays.</b>
+<b>Training a 6x or 24x compressed image representation using `2D, 3D, and 4D` cascaded-arrays.</b>
 ```
-cd DifferentiableIndirection/textureCompression
+cd DifferentiableIndirection/imageCompression
 python ./train.py 6 "Network_p2_c2_41" -- 6x Compression, 2D Primary/2D Cascaded
 python ./train.py 6 "Network_p2_c3_321" -- 6x Compression, 2D Primary/3D Cascaded
 python ./train.py 6 "Network_p2_c4_401" -- 6x Compression, 2D Primary/4D Cascaded
@@ -81,4 +81,4 @@ python ./train.py 24 "Network_p2_c3_321" -- 24x Compression, 2D Primary/3D Casca
 python ./train.py 24 "Network_p2_c4_401" -- 24x Compression, 2D Primary/4D Cascaded
 ```
 
-<b>Training a 6x or 24x compressed texture representation using `2D, 3D, and 4D` cascaded-arrays.</b>
+<b>De-compressing a pre-tained image.</b>
