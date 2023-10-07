@@ -5,3 +5,23 @@
 
 [Paper + Supplemental](https://arxiv.org/abs/2309.08387)
 
+# Directory structure
+
+```text
+├── DifferentiableIndirection
+│   └── disneyFit
+│   └── textureCompression
+├── DifferentiableIndirectionData
+│   └── gBuffer
+│   └── textureCache
+├── DifferentiableIndirectionOutput
+```
+
+# Important files
+
+# A simple <i>differentiable indirection</i> example
+
+# Training and inference
+
+
+
