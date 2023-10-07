@@ -25,6 +25,29 @@
 
 # A simple <i>differentiable indirection</i> example
 
+```
+import networksBase as nb
+import torch
+
+class DifferentiableIndirection(nn.Module):
+    def __init__(self, primarySize, cascadedSize, torchDevice):
+        super(DifferentiableIndirection, self).__init__()
+
+        # initialize primary - gpu device, array resolutions, channel count, bilinear interpolation,
+        # normalize o/p with non-linearity, scale initial content, initialize with uniform ramp - 'U'.        
+        self.primary = nb.SpatialGrid2D(torchDevice, uDim=primarySize, vDim=primarySize,
+                                      latent=2, bilinear=True, normalize=True, initScale=1, initMode="U")
+
+        # initialize cascaded - gpu device, array resolutions, channel count, bilinear interpolation,
+        # no o/p with non-linearity, scale initial content, initialize with constant value. 
+        self.cascaded = nb.SpatialGrid2D(torchDevice, uDim=cascadedSize, vDim=cascadedSize,
+                                      latent=1, bilinear=True, normalize=False, initScale=0.5, initMode="C")
+
+    # Assumes x \in [0, 1)
+    def forward(self, x):
+        return self.cascaded(self.primary(x))
+```
+
 # Training and inference
 
 
