@@ -58,4 +58,10 @@ cd DifferentiableIndirection/disneyFit
 ../disneyFit>python .\train.py 16 16 16
 ```
 
+# Dependencies
+
+* `torch`
+* `numpy`
+* `PIL`
+
 
