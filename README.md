@@ -13,7 +13,7 @@
 │   └── imageCompression
 ├── DifferentiableIndirectionData
 │   └── gBuffer
-│   └── textureCache
+│   └── imageCache
 ├── DifferentiableIndirectionOutput
 ```
 
