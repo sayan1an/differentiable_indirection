@@ -58,6 +58,12 @@ cd DifferentiableIndirection/disneyFit
 ../disneyFit>python .\train.py 16 16 16
 ```
 
+<b>Evaluating <i>Disney BRDF</i> using the previously trained network.</b>
+```
+cd DifferentiableIndirection/disneyFit
+../disneyFit>python .\eval.py 16 16 16
+```
+
 # Dependencies
 
 * `torch`
