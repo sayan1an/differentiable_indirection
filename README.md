@@ -24,7 +24,7 @@
 * `DifferentiableIndirection/imageCompression/networks.py` -- Defines image compression networks with varying `2D, 3D, 4D` cascaded arrays.
 
 # A simple <i>differentiable indirection</i> example
-
+![](din.png)
 ```
 import networksBase as nb
 import torch
