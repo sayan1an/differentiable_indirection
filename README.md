@@ -64,6 +64,16 @@ cd DifferentiableIndirection/disneyFit
 ../disneyFit>python .\eval.py 16 16 16
 ```
 
+<b>Training a 6x or 24x compressed texture representation using `2D, 3D, and 4D` cascaded-arrays.</b>
+```
+cd DifferentiableIndirection/textureCompression
+python ./train.py 6 "Network_p2_c2_41" -- 6x Compression, 2D Primary/2D Cascaded
+python ./train.py 6 "Network_p2_c3_321" -- 6x Compression, 2D Primary/3D Cascaded
+python ./train.py 6 "Network_p2_c4_401" -- 6x Compression, 2D Primary/4D Cascaded
+python ./train.py 24 "Network_p2_c2_41" -- 24x Compression, 2D Primary/2D Cascaded
+python ./train.py 24 "Network_p2_c3_321" -- 24x Compression, 2D Primary/3D Cascaded
+python ./train.py 24 "Network_p2_c4_401" -- 24x Compression, 2D Primary/4D Cascaded
+```
 # Dependencies
 
 * `torch`
