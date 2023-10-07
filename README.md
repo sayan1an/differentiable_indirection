@@ -56,7 +56,7 @@ class DifferentiableIndirection(torch.nn.Module):
 
 # Training and evalution
 
-Download the training data and place it in the directory structure as outlined above in folder `DifferentiableIndirectionData`. The training and inference output is accumulated in the folder `DifferentiableIndirectionOutput`.
+Download the training data and place it in the directory structure as outlined above in folder `DifferentiableIndirectionData`. Both training and evaluation output is accumulated in folder `DifferentiableIndirectionOutput`.
 
 <b>Training <i>Disney BRDF</i> using cascaded-decoders of size 16.</b>
 ```
