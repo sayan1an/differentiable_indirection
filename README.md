@@ -48,6 +48,12 @@ class DifferentiableIndirection(torch.nn.Module):
         return self.cascaded(self.primary(x))
 ```
 
+# Dependencies
+
+* `torch`
+* `numpy`
+* `PIL`
+
 # Training and evalution
 
 Download the training data and place it in the directory structure as outlined above in folder `DifferentiableIndirectionData`. The training and inference output is accumulated in the folder `DifferentiableIndirectionOutput`.
@@ -58,7 +64,7 @@ cd DifferentiableIndirection/disneyFit
 ../disneyFit>python .\train.py 16 16 16
 ```
 
-<b>Evaluating <i>Disney BRDF</i> with a previously trained network.</b>
+<b>Evaluating <i>Disney BRDF</i> with a pre-trained network.</b>
 ```
 cd DifferentiableIndirection/disneyFit
 ../disneyFit>python .\eval.py 16 16 16
@@ -74,10 +80,5 @@ python ./train.py 24 "Network_p2_c2_41" -- 24x Compression, 2D Primary/2D Cascad
 python ./train.py 24 "Network_p2_c3_321" -- 24x Compression, 2D Primary/3D Cascaded
 python ./train.py 24 "Network_p2_c4_401" -- 24x Compression, 2D Primary/4D Cascaded
 ```
-# Dependencies
 
-* `torch`
-* `numpy`
-* `PIL`
-
-
+<b>Training a 6x or 24x compressed texture representation using `2D, 3D, and 4D` cascaded-arrays.</b>
