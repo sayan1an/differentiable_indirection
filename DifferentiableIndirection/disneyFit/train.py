@@ -20,9 +20,6 @@ tab2Res = int(ut.getSysArgv(3))
 
 experimentName = baseName + "_tab0_" + str(tab0Res) + "_tab1_" + str(tab1Res) + "_tab2_" + str(tab2Res)
 
-if ut.isCluster():
-    experimentName += "_Cluster"
-
 def getOutputDirectory(expName):
     baseDataDirectory = ut.getBaseDirectory()
     return baseDataDirectory + "DifferentiableIndirectionOutput/DisneyFit/" + expName + "/"
