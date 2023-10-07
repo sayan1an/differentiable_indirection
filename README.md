@@ -81,4 +81,4 @@ python ./train.py 24 "Network_p2_c3_321" -- 24x Compression, 2D Primary/3D Casca
 python ./train.py 24 "Network_p2_c4_401" -- 24x Compression, 2D Primary/4D Cascaded
 ```
 
-<b>De-compressing a pre-tained image.</b>
+<b>De-compressing a pre-trained image.</b>
