@@ -48,7 +48,7 @@ class DifferentiableIndirection(torch.nn.Module):
         return self.cascaded(self.primary(x))
 ```
 
-# Training and inference
+# Training and evalution
 
 Download the training data and place it in the directory structure as outlined above in folder `DifferentiableIndirectionData`. The training and inference output is accumulated in the folder `DifferentiableIndirectionOutput`.
 
@@ -58,7 +58,7 @@ cd DifferentiableIndirection/disneyFit
 ../disneyFit>python .\train.py 16 16 16
 ```
 
-<b>Evaluating <i>Disney BRDF</i> using the previously trained network.</b>
+<b>Evaluating <i>Disney BRDF</i> with a previously trained network.</b>
 ```
 cd DifferentiableIndirection/disneyFit
 ../disneyFit>python .\eval.py 16 16 16
