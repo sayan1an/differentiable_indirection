@@ -5,6 +5,8 @@
 
 [Paper + Supplemental](https://arxiv.org/abs/2309.08387)
 
+[Data](https://drive.google.com/drive/folders/10qHheWQ8AEs_5_L3d0DMbex20OP6Mqif?usp=sharing)
+
 # Directory structure
 
 ```text
@@ -56,7 +58,7 @@ class DifferentiableIndirection(torch.nn.Module):
 
 # Training and evalution
 
-Download the training data and place it in the directory structure as outlined above in folder `DifferentiableIndirectionData`. Both training and evaluation output is accumulated in folder `DifferentiableIndirectionOutput`.
+Download the [training data](https://drive.google.com/drive/folders/10qHheWQ8AEs_5_L3d0DMbex20OP6Mqif?usp=sharing) and place it in the directory structure as outlined above in folder `DifferentiableIndirectionData`. Both training and evaluation output is accumulated in folder `DifferentiableIndirectionOutput`.
 
 <b>Training <i>Disney BRDF</i> using cascaded-decoders of size 16.</b>
 ```
