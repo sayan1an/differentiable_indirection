@@ -70,7 +70,7 @@ cd DifferentiableIndirection/disneyFit
 ../disneyFit>python .\eval.py 16 16 16
 ```
 
-<b>Training a 6x or 24x compressed image representation using `2D, 3D, and 4D` cascaded-arrays.</b>
+<b>Training a 6x or 12x compressed image representation using `2D, 3D, and 4D` cascaded-array netwrok-configs.</b>
 ```
 cd DifferentiableIndirection/imageCompression
 python ./train.py 6 "Network_p2_c2_41" "6_0" -- 6x Compression, 2D Primary/2D Cascaded, image name 6_0
