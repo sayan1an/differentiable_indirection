@@ -58,7 +58,7 @@ class DifferentiableIndirection(torch.nn.Module):
 
 # Training and evalution
 
-Clone the repository and download the [training data](https://drive.google.com/drive/folders/10qHheWQ8AEs_5_L3d0DMbex20OP6Mqif?usp=sharing). Place the data in the directory structure as outlined above in folder `DifferentiableIndirectionData`. Both training and evaluation output is accumulated in folder `DifferentiableIndirectionOutput`.
+Clone the repository and download the [training data](https://drive.google.com/drive/folders/10qHheWQ8AEs_5_L3d0DMbex20OP6Mqif?usp=sharing). Place the data in the directory structure as outlined above in the folder `DifferentiableIndirectionData`. Both training and evaluation output is accumulated in folder `DifferentiableIndirectionOutput`.
 
 <b>Training <i>Disney BRDF</i> using cascaded-decoders of size 16.</b>
 ```
