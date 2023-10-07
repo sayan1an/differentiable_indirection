@@ -24,8 +24,8 @@ outputDirectory = getOutputDirectory(experimentName)
 assert os.path.exists(outputDirectory), "Trained network directory does not exist."
 
 def infer():
-    if not os.path.exists(outputDirectory):
-        os.makedirs(outputDirectory + "infer/")
+    if not os.path.exists(outputDirectory + "eval/"):
+        os.makedirs(outputDirectory + "eval/")
 
     networkBlob = torch.load(outputDirectory + "disney.bin")
     torchDevice = ut.getTorchDevice("cuda")
@@ -46,7 +46,7 @@ def infer():
             
             shNet, shRef = render(torchDevice, disneyNetwork, idx)
 
-            imgFileName = outputDirectory + "infer/" + name
+            imgFileName = outputDirectory + "eval/" + name
             it.saveThumbnailCol(imgFileName + "_network", it.toUint8(shNet))
             it.saveThumbnailCol(imgFileName + "_reference", it.toUint8(shRef))
 
@@ -55,6 +55,6 @@ def infer():
             
             print("Done: " + name)
         
-        with open(outputDirectory + "infer/psnr.txt", "w") as text_file:
+        with open(outputDirectory + "eval/psnr.txt", "w") as text_file:
             text_file.write(logStr)
 infer()
