@@ -21,7 +21,7 @@ experimentName += "_CR" + str(compressionRatio)
 if ut.isCluster():
     experimentName += "_Cluster"
 
-textureDirectory = baseDataDirectory + "DifferentiableIndirectionData/textureCache/6_0/"
+textureDirectory = baseDataDirectory + "DifferentiableIndirectionData/imageCache/6_0/"
 outputDirectory = baseDataDirectory + "DifferentiableIndirectionOutput/6_0/" + experimentName + "/" #
 
 if not os.path.exists(outputDirectory):
