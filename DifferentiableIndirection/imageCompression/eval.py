@@ -19,14 +19,37 @@ compressionRatio = int(ut.getSysArgv(1))
 baseDataDirectory = ut.getBaseDirectory()
 experimentName += "_CR" + str(compressionRatio)
 
+imageDirectory = baseDataDirectory + "DifferentiableIndirectionData/imageCache/" + imageFolder
 outputDirectory = baseDataDirectory + "DifferentiableIndirectionOutput/" + imageFolder + "/" + experimentName + "/"
 
 assert os.path.exists(outputDirectory), "Trained network directory does not exist."
+
+def getRgbTexList():
+    textureNames = []
+    textures = []
+    textureIdxs = []
+    idx = 0
+    for filename in os.listdir(imageDirectory):
+        f = os.path.join(imageDirectory, filename)
+        if os.path.isfile(f):
+            rgb = it.readImage(f)
+            assert rgb.shape[0] == rgb.shape[1], "Do not support non-square textures"
+            assert np.min(rgb) >= 0.0 and np.max(rgb) <= 1.0, "Problem with file " + f
+            textureNames.append(filename)
+            #plt.imshow(rgb[:,:,:3])
+            #plt.show()
+            textures.append(rgb[:,:,:3])
+            textureIdxs.append(idx)
+            idx += 1
+    
+    return textureNames, textures, textureIdxs
 
 def infer():
     if not os.path.exists(outputDirectory + "eval/"):
         os.makedirs(outputDirectory + "eval/")
     torchDevice = ut.getTorchDevice("cpu")
+
+    refImage = torch.from_numpy(getRgbTexList()[1][0]).to(torchDevice) 
 
     binPath = outputDirectory + "*.bin"
     binFiles = glob.glob(binPath)
@@ -43,7 +66,13 @@ def infer():
 
     with torch.no_grad():
         uvSamples = ut.generateUvCoord(torchDevice, networkBlob["ht_resNative"], networkBlob["ht_resNative"]).reshape((-1,2))
-        networkOutput = network.infer(uvSamples).cpu().numpy().reshape((networkBlob["ht_resNative"], networkBlob["ht_resNative"], -1))
-        it.saveThumbnailCol(outputDirectory + "eval/networkOutput", it.toUint8(networkOutput[::-1]))
+        networkOutput = network.infer(uvSamples).reshape((networkBlob["ht_resNative"], networkBlob["ht_resNative"], -1))
+        reference = networks.bilinear2d(uvSamples, refImage)[0].reshape((networkBlob["ht_resNative"], networkBlob["ht_resNative"], -1))
+        mseErr = torch.nn.functional.mse_loss(networkOutput, reference).cpu().numpy()
+        psnr = 10 * np.log(1/mseErr) / np.log(10)
+        psnrStr = "PSNR: " + str(psnr)
+        it.saveThumbnailCol(outputDirectory + "eval/networkOutput", it.toUint8(networkOutput.cpu().numpy()[::-1]))
 
+        with open(outputDirectory + "eval/psnr.txt", "w") as text_file:
+            text_file.write(psnrStr)
 infer()
