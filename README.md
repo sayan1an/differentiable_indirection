@@ -5,6 +5,8 @@
 
 [Paper + Supplemental](https://arxiv.org/abs/2309.08387)
 
+[Data](https://drive.google.com/drive/folders/10qHheWQ8AEs_5_L3d0DMbex20OP6Mqif?usp=sharing)
+
 # Directory structure
 
 ```text
@@ -56,7 +58,7 @@ class DifferentiableIndirection(torch.nn.Module):
 
 # Training and evalution
 
-Download the training data and place it in the directory structure as outlined above in folder `DifferentiableIndirectionData`. The training and inference output is accumulated in the folder `DifferentiableIndirectionOutput`.
+Clone the repository and download the [training data](https://drive.google.com/drive/folders/10qHheWQ8AEs_5_L3d0DMbex20OP6Mqif?usp=sharing). Place the data in the directory structure as outlined above in the folder `DifferentiableIndirectionData`. Both training and evaluation output is accumulated in folder `DifferentiableIndirectionOutput`.
 
 <b>Training <i>Disney BRDF</i> using cascaded-decoders of size 16.</b>
 ```
@@ -70,7 +72,7 @@ cd DifferentiableIndirection/disneyFit
 ../disneyFit>python .\eval.py 16 16 16
 ```
 
-<b>Training a 6x or 24x compressed image representation using `2D, 3D, and 4D` cascaded-arrays.</b>
+<b>Training a 6x or 12x compressed image representation using `2D, 3D, and 4D` cascaded-array netwrok-configs.</b>
 ```
 cd DifferentiableIndirection/imageCompression
 python ./train.py 6 "Network_p2_c2_41" "6_0" -- 6x Compression, 2D Primary/2D Cascaded, image name 6_0
