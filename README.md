@@ -88,6 +88,8 @@ python ./train.py 12 "Network_p2_c4_401" "6_0" -- 12x Compression, 2D Primary/4D
 cd DifferentiableIndirection/imageCompression
 python ./eval.py 6 "Network_p2_c4_401" "6_0"
 ```
-# Based on official open-sourced version released under Creative Commons NC 4.0
-[Link](https://github.com/facebookresearch/differentiable-indirection)
+# Official repository and license
+Based on official open-sourced version released under Creative Commons NC 4.0 license.
+
+Link to [official repository](https://github.com/facebookresearch/differentiable-indirection).
 
